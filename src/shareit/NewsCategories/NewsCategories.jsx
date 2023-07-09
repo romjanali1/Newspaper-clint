@@ -5,7 +5,7 @@ const NewsCategories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:3000/news')
+        fetch('http://localhost:3000/category')
         .then(res => res.json())
         .then(data => setCategories(data))
     }, [])
@@ -13,7 +13,7 @@ const NewsCategories = () => {
         <div className="d-sm-flex">
             {
                 categories.map(categori => <span className="px-2" key={categori.id}>
-                    <Link className="link-underline-light">{categori.category}</Link>
+                    <Link className="link-underline-light" to={`/category/${categori.id}`}>{categori.category}</Link>
 
                 </span>)
             }

@@ -1,9 +1,9 @@
+import Allnews from "../Allnews/Allnews";
 
 const Home = () => {
     return (
         <div>
-            <h1>home</h1>
-            
+            <Allnews></Allnews>  
         </div>
     );
 };
