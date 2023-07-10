@@ -4,9 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import NewsCategories from '../NewsCategories/NewsCategories';
+import { useContext } from 'react';
+import { AuthContex } from '../../contex/AuthProvider/AuthProvider';
+
 
 
 const Header = () => {
+  const {user} = useContext(AuthContex)
     return (
       <>
       <div className='text-center my-4'>
@@ -25,12 +29,12 @@ const Header = () => {
         </Nav>
         <Nav>
           <Nav.Link><Link style={{ textDecoration: 'none' }} to="/login">Log in</Link></Nav.Link>
-          <Nav.Link><Link style={{ textDecoration: 'none' }} to="/logout">Log out</Link></Nav.Link>
+          <Nav.Link><button style={{ textDecoration: 'none' }} className='btn btn-link py-0'>Log out</button></Nav.Link>
           <Nav.Link><Link style={{ textDecoration: 'none' }} to="/register">Register</Link></Nav.Link>
           <Nav.Link eventKey={2}>
-            <div>
-              <img src="" alt="" />
-              <span>Profile name</span>
+            <div className='py-0'>
+              <span className='pe-2'>{user?.displayName}</span>
+              <img style={{width: 30, height: 'auto'}} className='rounded-circle' src={user?.photoURL} alt="" />
             </div>
           </Nav.Link>
         </Nav>

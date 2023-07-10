@@ -5,6 +5,8 @@ import Home from './Home/Home'
 import About from './About/About'
 import Category from './Category/Category'
 import SingelNews from './SingelNews/SingelNews'
+import Login from './Login/Login'
+import Register from './Register/Register'
 
 
 
@@ -33,6 +35,12 @@ function App() {
         {
           path:'/news/:id', element: <SingelNews></SingelNews>,
           loader: ({params}) => fetch(`http://localhost:3000/news/${params.id}`)
+        },
+        {
+          path: '/login', element: <Login></Login>
+        },
+        {
+          path: '/register', element: <Register></Register>
         }
 
       ]
