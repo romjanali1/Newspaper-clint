@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import News from "../News/News";
+import { Link } from "react-router-dom";
 
 const Allnews = () => {
     const [newes, setNewes] = useState([])
@@ -11,10 +12,11 @@ const Allnews = () => {
     return (
         <div className="row gap-4 justify-content-center row-cols-1 row-cols-md-4">
         {
-            newes.map(news => <News
-            key= {news.id}
-            news= {news}
-            ></News>)
+            newes.map(news => <Link style={{ textDecoration: 'none' }} to={`/news/${news.id}`}> <News
+            key = {news.id}
+            news= {news}>
+                
+            </News> </Link>)
         }
             
         </div>

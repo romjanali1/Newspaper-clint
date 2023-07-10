@@ -31,8 +31,8 @@ function App() {
           
         },
         {
-          path:'/news/singel/:id', element: <SingelNews></SingelNews>,
-          loader: ({params}) => fetch(`http://localhost:3000/news/singel/${params.id}`)
+          path:'/news/:id', element: <SingelNews></SingelNews>,
+          loader: ({params}) => fetch(`http://localhost:3000/news/${params.id}`)
         }
 
       ]
