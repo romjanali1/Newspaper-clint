@@ -10,7 +10,17 @@ import { AuthContex } from '../../contex/AuthProvider/AuthProvider';
 
 
 const Header = () => {
-  const {user} = useContext(AuthContex)
+  const {user, ProviderLog_out} = useContext(AuthContex)
+
+  const google_logout = ()=>{
+    ProviderLog_out(google_logout)
+    .then( () =>{
+      alert('Sign-out successful.')
+    })
+    .catch( () =>{
+      
+    })
+  }
     return (
       <>
       <div className='text-center my-4'>
@@ -28,9 +38,15 @@ const Header = () => {
           <Nav.Link><Link className='link-underline-light' to="/about">About</Link></Nav.Link>
         </Nav>
         <Nav>
+       {user?.uid?
+         
+           <Nav.Link><button onClick={google_logout} style={{ textDecoration: 'none' }} className='btn btn-link py-0'>Log out</button></Nav.Link>
+           
+        : <> 
           <Nav.Link><Link style={{ textDecoration: 'none' }} to="/login">Log in</Link></Nav.Link>
-          <Nav.Link><button style={{ textDecoration: 'none' }} className='btn btn-link py-0'>Log out</button></Nav.Link>
           <Nav.Link><Link style={{ textDecoration: 'none' }} to="/register">Register</Link></Nav.Link>
+          </>
+         }
           <Nav.Link eventKey={2}>
             <div className='py-0'>
               <span className='pe-2'>{user?.displayName}</span>
