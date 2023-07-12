@@ -7,6 +7,7 @@ import Category from './Category/Category'
 import SingelNews from './SingelNews/SingelNews'
 import Login from './Login/Login'
 import Register from './Register/Register'
+import PrivatRout from './shareit/PrivatRout/PrivatRout'
 
 
 
@@ -33,7 +34,7 @@ function App() {
           
         },
         {
-          path:'/news/:id', element: <SingelNews></SingelNews>,
+          path:'/news/:id', element: <PrivatRout><SingelNews></SingelNews></PrivatRout>,
           loader: ({params}) => fetch(`http://localhost:3000/news/${params.id}`)
         },
         {

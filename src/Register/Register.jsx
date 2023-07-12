@@ -2,12 +2,16 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContex } from '../contex/AuthProvider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
   const {createUser} = useContext(AuthContex);
   const navegat = useNavigate()
+
+  const location = useLocation();
+
+  const from = location.state?.form?.pathname || '/' ;
 
   const handelRegister = event =>{
     event.preventDefault();
@@ -22,7 +26,7 @@ const Register = () => {
     .then( (userCredential) =>{
       const user = userCredential.user;
       form.reset()
-      navegat('/')
+      navegat(from, {replace: true})
 
     })
     .catch( (error) =>{
