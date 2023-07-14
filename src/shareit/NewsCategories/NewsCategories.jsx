@@ -10,7 +10,7 @@ const NewsCategories = () => {
         .then(data => setCategories(data))
     }, [])
     return (
-        <div className="d-sm-flex">
+        <div className="d-flex flex-wrap">
             {
                 categories.map(categori => <span className="px-2" key={categori.id}>
                     <Link className="link-underline-light" to={`/category/${categori.id}`}>{categori.category}</Link>
