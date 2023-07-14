@@ -39,11 +39,12 @@ const Footer = () => {
           <div>
             <h4>Follow Us</h4>
             <div className='d-flex align-items-center'>
+                <a href="https://www.facebook.com/mnhRomjanAli/"><p className='pe-2'><AiOutlineFacebook /></p></a>
+                <a  href="https://www.linkedin.com/in/romjan-ali-01b53a283/"><p className='pe-2'><AiOutlineLinkedin /></p></a>
                 <p className='pe-2'><AiFillTwitterCircle /></p>
-                <p className='pe-2'><AiOutlineFacebook /></p>
                 <p className='pe-2'><AiOutlineSkype /></p>
                 <p className='pe-2'><AiFillGoogleCircle /></p>
-                <p className='pe-2'><AiOutlineLinkedin /></p>
+                
 
             </div>
           </div>
