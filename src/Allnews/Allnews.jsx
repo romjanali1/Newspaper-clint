@@ -12,8 +12,10 @@ const Allnews = () => {
     return (
         <div className="row gap-4 justify-content-center row-cols-1 row-cols-md-4">
         {
-            newes.map(news => <Link style={{ textDecoration: 'none' }} to={`/news/${news.id}`}> <News
+            newes.map(news => <Link style={{ textDecoration: 'none' }} to={`/news/${news.id}`}
             key = {news.id}
+            > <News
+            
             news= {news}>
                 
             </News> </Link>)
